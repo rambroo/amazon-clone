@@ -1,0 +1,20 @@
+function clickButton () {
+    const [isListVisible, setListVisible] = useState(false);
+
+    // Sample list of items
+    const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+    
+    const handleDivClick = () => {
+      setListVisible(!isListVisible);
+    };
+    <div onClick={handleDivClick} style={{margin:'100px', padding: '10px', backgroundColor: '#f0f0f0', cursor: 'pointer' }}>
+            Click me to {isListVisible ? 'hide' : 'show'} the list
+            {isListVisible && (
+            <ul>
+              {items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
+          </div>
+}
